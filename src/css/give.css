@@ -1,0 +1,40 @@
+.give {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    height: 100vh;
+    font-size: large;
+}
+
+/* .give .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.instructions {
+    margin-top: 20px;
+}
+
+.give .instructions .container {
+    display: flex;
+    align-items: start;
+}
+
+.instructions {
+    background-color: var(--main-color);
+}
+
+.instructions .container li img {
+    display: block;
+    background-color: var(--main-color);
+    margin-top: 30px;
+    max-width: 100%;
+}
+
+.instructions .container li span{
+    overflow: auto;
+}
+
+.instructions .container li {
+    margin-top: 30px;
+}
