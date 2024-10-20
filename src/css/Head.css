@@ -1,12 +1,6 @@
-:root {
-    --main-color: #0d0d0d;
-    --secondary-color: red;
-}
-
-
 /* Navigation */
 .sections span {
-    color: var(--secondary-color);
+    color: var(--secondary-text-color);
     margin-left: 20px;
     font-weight: bold;
     font-size: 20px;

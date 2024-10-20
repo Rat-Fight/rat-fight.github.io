@@ -6,6 +6,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Index from './components/Index.jsx'
 import About from './components/About.jsx'
 import Give from './components/Give.jsx'
+import Join from './components/Join.jsx'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +21,8 @@ function App() {
         <Route exact path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/give" element={<Give />} />
+        <Route path="/give" element={<Give />} />
+        <Route path='join' element={<Join />} />
       </Routes>
     </Router>
 

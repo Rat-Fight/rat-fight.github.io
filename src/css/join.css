@@ -1,0 +1,18 @@
+.join {
+    color: var(--secondary-text-color);
+}
+
+.join .container h1 {
+    margin-bottom: 20px;
+}
+
+.join .container img {
+    width: 80%;
+}
+
+.left {
+    display: flex;
+    align-items: start;
+
+}
+

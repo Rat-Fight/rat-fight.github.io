@@ -1,6 +1,6 @@
 .give {
     background-color: var(--main-color);
-    color: var(--secondary-color);
+    color: var(--secondary-text-color);
     height: 100vh;
     font-size: large;
 }

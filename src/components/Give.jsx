@@ -24,10 +24,10 @@ export default function Give() {
                         <h2>How to help us?</h2>
                         <ul>                      
                             <li>
-                            <span>To donate to RatFight Club team, visit <a target='_blank' href='https://give.berea.edu/page/64519/donate/1?locale=en-US'> Berea Donation Page.</a></span>
+                            <span>To donate to Rat Fight Robotics Team, visit <a target='_blank' href='https://give.berea.edu/page/64519/donate/1?locale=en-US'> Berea Donation Page.</a></span>
                             </li>
                             <li>
-                                <span>Select Gift amount and frequesncy. For Gift designation, please select 'other' and then type 'RatFight Club' in the space below.</span>
+                                <span>Select Gift amount and frequesncy. For Gift designation, please select 'other' and then type 'Rat Fight Robotics Team' in the space below.</span>
                                 <img src={donation1} width='500px'/>
                             </li>
                             <li>
