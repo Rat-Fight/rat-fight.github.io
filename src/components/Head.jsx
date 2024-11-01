@@ -16,14 +16,21 @@ export default function Head() {
                         <Link to='/' id='logo'>
                             <img src={RatFight2023logo} alt="Rat Boxer Logo - Image not found" height="65" />
                         </Link>
-                        {/* The responsiveness point is at 545. After that, the below should be made into a list */}
-                        <span className="sections">
-                            <span><Link to="/give">Give</Link></span>
-                            <span><Link to="/join">Join us</Link></span>
-                            <span><Link to="/Contact"> Contact</Link></span>
-                            <span><Link to="/about">Our Sponosrs</Link></span>
-                            <span><Link to="/about">About</Link></span>
-                        </span>
+                        <div className='links'>
+                            <span className='icon'>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            {/* The responsiveness point is at 545. After that, the below should be made into a list */}
+                            <span className="sections">
+                                <span><Link to="/give">Give</Link></span>
+                                <span><Link to="/join">Join us</Link></span>
+                                <span><Link to="/Contact"> Contact</Link></span>
+                                <span><Link to="/about">Our Sponsors</Link></span>
+                                <span><Link to="/about">About</Link></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

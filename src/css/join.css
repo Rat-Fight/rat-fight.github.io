@@ -16,3 +16,10 @@
 
 }
 
+.join-button {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bolder;
+}

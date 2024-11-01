@@ -1,0 +1,814 @@
+./src/components/read_yall.py 
+ 
+import os
+
+def search_directory(directory):
+    
+    files = os.listdir(directory)
+
+    for file in files:
+        if "." in file:
+            extension = file.split('.')[1]
+            files_classification.get(extension, []).append(directory + '/' +file)
+        else:
+            search_directory(directory + "/" + file)
+    
+
+files_classification = {
+    "py": [],
+    "js": [],
+    "jsx": [],
+    "html": [],
+    "css": [],
+}
+
+
+main_directory = "./src"
+search_directory(main_directory)
+print(files_classification)
+
+content = ''
+for type, file_list in files_classification.items():
+    for file in file_list:
+        print(f"File: {file}")
+        with open(file, 'r') as fhand:
+            content += f"{file} \n \n"
+            content += fhand.read()
+
+with open('all_files.txt', 'w') as fhand:
+    fhand.write(content)
+./src/components/scratch.py 
+ 
+nums = [0,0,1,1,1,2,2,3,3,4]
+
+nums_len = len(nums)
+k = 0
+i = 0
+while i < nums_len:
+    element = nums[i]
+
+    if element in nums[i + 1:]:
+        nums.pop(i)
+
+        print("Condition True")
+        print(i, nums)
+    else:
+        print("Condition False")
+        i += 1
+        print(i, nums)
+
+
+print(nums)
+
+print(len(nums))./src/App.jsx 
+ 
+import { useState } from 'react'
+import Head from './components/Head.jsx'
+import './css/App.css'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+
+import Index from './components/Index.jsx'
+import About from './components/About.jsx'
+import Give from './components/Give.jsx'
+import Join from './components/Join.jsx'
+
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+
+    <Router>
+    <Head />
+      <Routes>
+        <Route exact path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/give" element={<Give />} />
+        <Route path="/give" element={<Give />} />
+        <Route path='join' element={<Join />} />
+      </Routes>
+    </Router>
+
+    </>
+  )
+}
+
+export default App
+./src/components/About.jsx 
+ 
+
+
+
+function About() {
+    return (
+        <>About </>
+    )
+}
+
+export default About./src/components/Give.jsx 
+ 
+import '../css/index.css'
+import '../css/App.css'
+import '../css/give.css'
+import donation1 from '../assets/donate1.png'
+
+const PLACEHOLDER_TEXT = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+
+
+export default function Give() {
+    return(
+        <div className='give'>
+            <div className='container'>
+                <h1>Help us Grow!</h1>
+                <p>
+                    {PLACEHOLDER_TEXT}
+                </p>
+            </div>
+            <div className='instructions'>
+                <div className='container'>
+                        <h2>How to help us?</h2>
+                        <ul>                      
+                            <li>
+                            <span>To donate to Rat Fight Robotics Team, visit <a target='_blank' href='https://give.berea.edu/page/64519/donate/1?locale=en-US'> Berea Donation Page.</a></span>
+                            </li>
+                            <li>
+                                <span>Select Gift amount and frequesncy. For Gift designation, please select 'other' and then type 'Rat Fight Robotics Team' in the space below.</span>
+                                <img src={donation1} width='500px'/>
+                            </li>
+                            <li>
+                                <span>Type Your personal information</span>
+                            </li>
+                            <li>
+                                <span>Type Your billing information and payment details</span>
+                            </li>
+                            <li>
+                                <span>Submit to make impact!</span>
+                            </li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+./src/components/Head.jsx 
+ 
+import React from 'react';
+import { Link, Router } from 'react-router-dom';
+
+
+import reactLogo from '../assets/favcon.png'
+import RatFight2023logo from '../assets/favcon.png'
+import '../css/App.css'
+import '../css/Head.css'
+
+export default function Head() {
+    return (
+        <>
+            <div className="parent">
+                <div className="navBar">
+                    <div className="container" >
+                        <Link to='/' id='logo'>
+                            <img src={RatFight2023logo} alt="Rat Boxer Logo - Image not found" height="65" />
+                        </Link>
+                        <span className='icon'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        {/* The responsiveness point is at 545. After that, the below should be made into a list */}
+                        <span className="sections">
+                            <span><Link to="/give">Give</Link></span>
+                            <span><Link to="/join">Join us</Link></span>
+                            <span><Link to="/Contact"> Contact</Link></span>
+                            <span><Link to="/about">Our Sponsors</Link></span>
+                            <span><Link to="/about">About</Link></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+./src/components/Index.jsx 
+ 
+const PLACEHOLDER_TEXT = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+
+import Team from "./Team"
+import '../css/App.css'
+
+
+function Index() {
+
+    return (
+        <>  
+
+            <div className="landing">
+                <div className='landing-text'>
+                    <h1>Welcome to Rat Fight Robotics Team</h1>
+                </div>
+            </div>
+            <div className="goals">
+                <div className="container">
+                    <h1>What We Do</h1>
+                    <div className="cards">
+                        <div> {PLACEHOLDER_TEXT} </div>
+                        <div> {PLACEHOLDER_TEXT} </div>
+                        <div> {PLACEHOLDER_TEXT} </div>
+                        <div> {PLACEHOLDER_TEXT} </div>
+                    </div>
+                </div>
+            </div>
+
+            <Team/>
+        </>
+    )
+}
+
+
+export default Index
+
+./src/components/Join.jsx 
+ 
+import '../css/join.css'
+
+
+let PLACEHOLDER_TEXT = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+
+const Join = () => {
+    return (
+        <div className='join'>
+            <div className='container'>
+                <h1>Join Our Team!</h1> 
+                <img src='src\assets\join1.jpg'/> 
+            </div>
+
+            <div>
+                <div className='left'>
+                    <div className='container'>                    
+                        <h2>Why Join Us?</h2>
+                        <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    )
+}
+
+export default Join;
+
+ ./src/components/Member.jsx 
+ 
+import '../css/team.css'
+
+import image from '../assets/RatFight2023logo.png'
+export default function Member(props) {
+
+    return (
+        <>
+        <div className="member">
+            <div className="head">
+                <div className="image">
+                    <img src={image} alt={props.name} />
+                </div>
+                <div className="info">
+                    <h1 class="name">
+                        {props.name}
+                    </h1>
+                    <h3 className="desc">
+                        {props.description}
+                    </h3>
+                </div>
+            </div>
+            <p className='details'>
+
+            </p>
+        </div>
+    </>
+    )
+}./src/components/Team.jsx 
+ 
+import '../css/team.css';
+import { useState } from 'react';
+const disc_placeholder = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+
+
+import Member from './Member'
+const Team = () => {
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const nextMember = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
+        console.log(currentIndex)
+    };
+
+    const prevMember = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + teamMembers.length) % teamMembers.length);
+        console.log(currentIndex)
+    };
+
+    const teamMembers = [
+        { name: 'Dr. Scott Heggen', description: 'Team Administrator' },
+        { name: 'David Brothers', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+        { name: 'Besher Kitaz', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }
+    ];
+
+    return (
+
+        <div className="team">
+            <div className='container'>
+                <h1> Our Team </h1>
+                <Member name={teamMembers[currentIndex].name}  
+                        description={teamMembers[currentIndex].description}
+                />
+                <div className='navButtons'>
+                    <button className="prev-button" onClick={prevMember} > &lt; </button>
+                    <button className="next-button" onClick={nextMember} > &gt; </button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Team;
+
+./src/main.jsx 
+ 
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import './css/index.css'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+./src/css/App.css 
+ 
+:root {
+    --main-color: white;
+    --secondary-color: blue;
+    --secondary-text-color: #514d4d;
+}
+
+.baskervville-sc-regular {
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
+/* Global Stuff */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+    background-color: var(--main-color);
+}
+
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: var(--main-color);
+
+}
+
+/* .parent {
+    position: fixed
+} */
+
+/* small */
+  @media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End of global stuff */
+
+
+
+
+/* Anchor Tag */
+
+
+a[href^="/"] {
+    position: relative;
+    text-decoration: none;
+    color: var(--secondary-text-color); /* Original color */
+    font-size: 24px;
+    overflow: hidden;
+}
+
+a[href^="/"]::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background: var(--secondary-text-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a[href^="/"]:hover::after {
+    transform: scaleX(1);
+}
+
+/* Set hover color to prevent default blue color */
+a[href^="/"]:hover {
+    color: var(--secondary-color); /* Keep the same color on hover */
+}
+
+
+/* Navigation End */
+
+/* Landing section */
+
+.landing {
+    background-image: url(../assets/landing.png);
+    background-size:cover;
+    position: relative;
+    height: calc(100vh - 71px);
+    position: relative;
+    overflow-x:hidden;
+}
+
+
+.landing-text h1 {
+    color: black;
+    font-weight:900;  
+    width:50vw;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 2.5rem;
+    margin-top: 120px;
+    text-align: center;
+    min-width: 300px;
+
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.26);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+/* Below Landing Rules */
+.goals .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 2fr));
+    gap: 40px; /* Space between items */
+    margin-top: 20px;
+    color: var(--secondary-text-color);
+    
+}
+
+@media (max-width: 600px) {
+    .goals .cards {
+        grid-template-columns: repeat(1 , minmax(200px, 2fr));
+    }
+}
+
+.goals {
+    height: 100%;
+}
+
+.goals .cards div {
+    border: solid var(--secondary-color);
+    border-radius: 35px;
+    padding: 20px;
+    overflow: hidden; /* Hides any overflowing content */
+    transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.goals .cards div:hover {
+    transform: translateY(-20px);
+}
+
+.team {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+.header-text {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+
+./src/css/give.css 
+ 
+.give {
+    background-color: var(--main-color);
+    color: var(--secondary-text-color);
+    height: 100vh;
+    font-size: large;
+}
+
+/* .give .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.instructions {
+    margin-top: 20px;
+}
+
+.give .instructions .container {
+    display: flex;
+    align-items: start;
+}
+
+.instructions {
+    background-color: var(--main-color);
+}
+
+.instructions .container li img {
+    display: block;
+    background-color: var(--main-color);
+    margin-top: 30px;
+    max-width: 100%;
+}
+
+.instructions .container li span{
+    overflow: auto;
+}
+
+.instructions .container li {
+    margin-top: 30px;
+}./src/css/Head.css 
+ 
+/* Navigation */
+.sections span {
+    color: var(--secondary-text-color);
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.navBar .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#logo::after {
+    transform: scaleX(0);
+}
+
+
+/* Navigation End */
+
+/* Navigation Icon for small screens */
+
+.navBar .container:hover .icon span:nth-child(2) {
+    width: 100%;
+  }
+.navBar .container .icon {
+    display: none;
+  }
+.navBar .container .icon span {
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;
+  }
+.navBar .container .icon span:first-child {
+  width: 100%;
+}
+.navBar .container .icon span:nth-child(2) {
+  width: 60%;
+  transition: 0.5s;
+}
+.navBar .container .icon span:last-child {
+  width: 100%;
+}
+
+
+@media (max-width: 680px) {
+  .header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+  }
+  .header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+  }
+  .header .links:hover ul {
+    display: block;
+  }
+  .header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: var(--main-duration);
+  }
+  .header .links ul li a:hover {
+    padding-left: 25px;
+  }
+}./src/css/index.css 
+ 
+:root {
+  --main-color: white;
+  --secondary-color: blue;
+  --secondary-text-color: #3b3737;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #2d2f52;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: white;
+  }
+  button {
+    background-color: white;
+  }
+}
+./src/css/join.css 
+ 
+.join {
+    color: var(--secondary-text-color);
+}
+
+.join .container h1 {
+    margin-bottom: 20px;
+}
+
+.join .container img {
+    width: 80%;
+}
+
+.left {
+    display: flex;
+    align-items: start;
+
+}
+
+./src/css/team.css 
+ 
+.team {
+    color: var(--secondary-text-color);
+    margin-top: 40px;
+    background-color: #f7f7f7;
+}
+
+.team .container {
+    background-color: #f7f7f7;
+    max-width: 100vw;
+
+}
+.member {
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    max-width: 100vw;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+
+.head img {
+    width: 150px;
+    height: auto;
+    margin-right: 50px;
+}
+
+
+
+.details {
+    margin-top: 20px;
+}
+
+.navButtons {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 15%;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.prev-button {
+    border-radius: 50%;
+}
+
+.next-button {
+    border-radius: 50%;
+} 
+
+
+@media (max-width: 429px) {
+    .member .head {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -18,10 +18,10 @@ function Index() {
                     <h1>Welcome to Rat Fight Robotics Team</h1>
                 </div>
             </div>
-            <div class="goals">
-                <div class="container">
+            <div className="goals">
+                <div className="container">
                     <h1>What We Do</h1>
-                    <div class="cards">
+                    <div className="cards">
                         <div> {PLACEHOLDER_TEXT} </div>
                         <div> {PLACEHOLDER_TEXT} </div>
                         <div> {PLACEHOLDER_TEXT} </div>

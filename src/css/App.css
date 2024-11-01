@@ -1,6 +1,6 @@
 :root {
     --main-color: white;
-    --secondary-color: blue;
+    --secondary-color:  rgb(59, 59, 177);
     --secondary-text-color: #514d4d;
 }
 
@@ -129,14 +129,16 @@ a[href^="/"]:hover {
     margin-right:auto;
     font-size: 2.5rem;
     margin-top: 120px;
+    text-align: center;
+    min-width: 300px;
 
-        /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.17);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.6px);
-    -webkit-backdrop-filter: blur(2.6px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.26);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(255, 255, 255, 0.11);
 }
 
 /* Below Landing Rules */
@@ -146,6 +148,7 @@ a[href^="/"]:hover {
     gap: 40px; /* Space between items */
     margin-top: 20px;
     color: var(--secondary-text-color);
+    
 }
 
 @media (max-width: 600px) {
@@ -163,7 +166,8 @@ a[href^="/"]:hover {
     border-radius: 35px;
     padding: 20px;
     overflow: hidden; /* Hides any overflowing content */
-    transition: transform 0.5s
+    transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .goals .cards div:hover {

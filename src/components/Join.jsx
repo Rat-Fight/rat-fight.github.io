@@ -8,6 +8,10 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
 
 const Join = () => {
+
+    function redirect() {
+        window.location.href = "https://forms.google.com"
+    }
     return (
         <div className='join'>
             <div className='container'>
@@ -16,10 +20,11 @@ const Join = () => {
             </div>
 
             <div>
-                <div className='left'>
-                    <div className='container'>                    
-                        <h2>Why Join Us?</h2>
-                        <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                 <div className='container'>                    
+                    <h2>Why Join Us?</h2>
+                    <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                    <div>
+                        <button className='join-button' onClick={redirect}>Join Now!</button>
                     </div>
                 </div>
             </div>  

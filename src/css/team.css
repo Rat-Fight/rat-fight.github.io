@@ -1,26 +1,76 @@
 .team {
     color: var(--secondary-text-color);
     margin-top: 40px;
+    background-color: #f7f7f7;
 }
 
+.team .container {
+    background-color: #f7f7f7;
+    max-width: 100vw;
+}
+
+.team .container>h1 {
+    color: var(--secondary-color);
+}
+.icon {
+    color: white; /* Change to your desired color */
+  }
+
 .member {
-    border: solid, var(--secondary-color), 2px;
+    border: none;
     border-radius: 15px;
     width: 100%;
     margin: 20px;
     padding: 20px;
+    max-width: 100vw;
+}
 
-    display:flex;
-    flex-direction: row;
+.head {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
 }
 
 
-.member .text {
+.head img {
+    width: 150px;
+    height: auto;
     margin-right: 50px;
 }
 
-.member img {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
+
+
+.details {
+    margin-top: 20px;
+}
+
+.navButtons {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 15%;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.nav-button {
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+}
+
+
+
+@media (max-width: 429px) {
+    .member .head {
+        display: flex;
+        flex-direction: column;
+    }
 }
