@@ -1,11 +1,35 @@
 import '../css/join.css'
+import Footer from '../components/Footer.jsx'
 
+let join = `
+Are you passionate about innovation, teamwork, and hands-on learning? Our robotics team provides an incredible opportunity to develop technical skills, collaborate on real-world engineering challenges, and be part of an exciting community of problem-solvers. Whether you're interested in coding, mechanical design, fundraising, or outreach, there's a place for you on our team!
 
-let PLACEHOLDER_TEXT = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+By joining us, you’ll gain experience in STEM fields, work with experienced mentors, and compete in thrilling robotics competitions. Plus, you'll make lasting friendships and contribute to something bigger than yourself.`
+
+let join_student = `
+As a student team member, you’ll dive into the world of robotics, learning programming, mechanical engineering, electrical systems, and teamwork. No prior experience is required—just a willingness to learn and a passion for technology!
+
+You'll have the chance to:
+`
+let join_student_bullets = [
+    'Build and program competitive robots',
+    'Work alongside industry professionals and mentor', 
+    'Travel to competitions and showcase your skills',
+    'Develop leadership, problem-solving, and teamwork abilities',
+]
+
+let join_mentor = `
+As a mentor, you’ll guide students on their robotics journey, helping them develop problem-solving skills, communication, and teamwork. You'll also be responsible for managing the team's projects and competitions.
+
+You'll have the chance to:
+`
+
+let join_mentor_bullets = [
+    'Guide students on their robotics journey',
+    'Support and mentor students in STEM fields',
+    'Lead and manage the team\'s projects and competitions',
+    'Provide technical guidance and support',
+]
 
 const Join = () => {
 
@@ -19,15 +43,39 @@ const Join = () => {
                 <img src='src\assets\join1.jpg'/> 
             </div>
 
-            <div>
-                 <div className='container'>                    
+            <div className='instructions'>
+                 <div className='container'>  
+                    {/* Join section - general */}                  
                     <h2>Why Join Us?</h2>
-                    <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                    <p>{join}</p>
+
+                    {/* Join as a studnet section */}
+                    <div>
+                    <h2>Join as a student</h2>
+                        <span>{join_student}</span>
+                        <ul>
+                            {join_student_bullets.map((bullet, index) => (
+                                <li key={index}>{bullet}</li>
+                            ))}
+                        </ul>   
+                        <div>
+                            <button className='join-button' onClick={redirect}>Join Now!</button>
+                        </div>
+                    </div>
+
+                    <h2>Join as a mentor</h2>
+                    <p>{join_mentor}</p>
+                    <ul>
+                        {join_mentor_bullets.map((bullet, index) => (
+                            <li key={index}>{bullet}</li>
+                        ))}
+                    </ul>
                     <div>
                         <button className='join-button' onClick={redirect}>Join Now!</button>
                     </div>
                 </div>
             </div>  
+            <Footer/>
         </div>
     )
 }

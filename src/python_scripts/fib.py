@@ -9,11 +9,10 @@ def fib_cached(n, cache={0: 1, 1: 1}):
 
     return cache[n]
 
-def fib(n): 
+def fib(n):
     if n == 1 or n == 2: return 1
 
     return fib(n - 1) + fib(n - 2)
-
 
 def do_with_time(func1):
     start_time = time.time()
@@ -23,5 +22,3 @@ def do_with_time(func1):
 
 do_with_time(fib_cached)
 print("\n")
-
-

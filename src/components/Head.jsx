@@ -4,6 +4,8 @@ import { Link, Router } from 'react-router-dom';
 
 import reactLogo from '../assets/favcon.png'
 import RatFight2023logo from '../assets/favcon.png'
+import BereaLogo from '../assets/bereaCollegeLogo.png'
+
 import '../css/App.css'
 import '../css/Head.css'
 
@@ -26,8 +28,7 @@ export default function Head() {
                             <span className="sections">
                                 <span><Link to="/give">Give</Link></span>
                                 <span><Link to="/join">Join us</Link></span>
-                                <span><Link to="/Contact"> Contact</Link></span>
-                                <span><Link to="/about">Our Sponsors</Link></span>
+                                <span><Link to="/sponsors">Our Sponsors</Link></span>
                                 <span><Link to="/about">About</Link></span>
                             </span>
                         </div>

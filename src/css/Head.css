@@ -1,14 +1,27 @@
+.parent  {
+  background-color: var(--secondary-color);
+}
+
+.parent .navBar .container{
+  background-color: var(--secondary-color);
+}
+
+.navBar .container span a img {
+  max-width: 80px;
+  margin-left: 20px;
+}
+
 /* Navigation */
 @media (min-width: 680px) {
-  .sections span {
-    color: var(--secondary-text-color);
+  .sections span a{
+    color: #ddd;
     margin-left: 20px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 
-.navBar .container {
+.navBar .container { 
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,6 +33,7 @@
 #logo::after {
     transform: scaleX(0);
 }
+
 
 }
 
@@ -50,7 +64,6 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      background-color: aliceblue; 
       z-index: 999;
       right: 50px;
       top: 60px;

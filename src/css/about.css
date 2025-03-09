@@ -1,0 +1,25 @@
+
+
+.about {
+    text-align: left;
+    line-height: 1.6;
+    color: #333;
+}
+
+.left {
+    text-align: left; /* Keep bullet points left-aligned */
+    margin-left: 20px; /* Optional: add some margin for better spacing */
+    align-items: flex-start;
+    
+}
+
+.about .container {
+    display: flex;
+    align-items: flex-start; /* Align items to the start vertically */
+    justify-content: center; /* Center the container horizontally */
+    flex-direction: column; /* Keep elements in a column layout */
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: var(--main-color);
+    text-align: center; /* Center text in the container */
+}

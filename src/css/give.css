@@ -5,11 +5,9 @@
     font-size: large;
 }
 
-/* .give .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+.give .container h1{
+    color: var();
+}
 
 .instructions {
     margin-top: 20px;

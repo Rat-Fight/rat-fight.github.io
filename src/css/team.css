@@ -12,8 +12,9 @@
 .team .container>h1 {
     color: var(--secondary-color);
 }
+
 .icon {
-    color: white; /* Change to your desired color */
+    color: white;
   }
 
 .member {
@@ -22,8 +23,15 @@
     width: 100%;
     margin: 20px;
     padding: 20px;
-    max-width: 100vw;
 }
+
+
+
+.member p { 
+    max-height: 5vh;
+    min-height: 5vh;
+}
+
 
 .head {
     display: flex;
@@ -38,38 +46,68 @@
     margin-right: 50px;
 }
 
-
-
 .details {
     margin-top: 20px;
 }
 
 .navButtons {
     display: flex;
-    justify-content: space-between;
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 15%;
+    transition: background-color 0.6s;
+    width: 50%;
+    justify-content: center;
+    border-radius: 50%;
+    margin: auto;
 }
 
 .nav-button:hover {
+    justify-content: space-between;
     background-color: var(--primary-hover-color);
 }
 
 .nav-button {
     border-radius: 50%;
     background-color: var(--secondary-color);
+    margin: 10px;
+
+
 }
 
+@media (min-width: 429px) {
+    .details-container {
+        min-height: 100px;
+    }
+}
 
+@media (max-width: 1080px) {
+    .member {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 840px) {
+    .member {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .member {
+        min-height: 500px;
+    }
+}
 
 @media (max-width: 429px) {
-    .member .head {
+    .member {
+        min-height: 650px;
+    }
+
+    .head {
         display: flex;
         flex-direction: column;
     }

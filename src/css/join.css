@@ -23,3 +23,8 @@
     color: white;
     font-weight: bolder;
 }
+
+.join .instructions .container {
+    display: flex;
+    align-items: start;
+}

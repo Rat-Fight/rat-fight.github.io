@@ -1,4 +1,33 @@
-./src/components/read_yall.py 
+./src/python_scripts/fib.py 
+ 
+import time
+
+def fib_cached(n, cache={0: 1, 1: 1}):
+
+    if n in cache:
+        return cache[n]
+
+    cache[n] = fib_cached(n - 1, cache) + fib_cached(n - 2, cache)
+
+    return cache[n]
+
+def fib(n): 
+    if n == 1 or n == 2: return 1
+
+    return fib(n - 1) + fib(n - 2)
+
+
+def do_with_time(func1):
+    start_time = time.time()
+    print(func1(40))
+    end_time = time.time()
+    print(end_time - start_time)
+
+do_with_time(fib_cached)
+print("\n")
+
+
+./src/python_scripts/read_yall.py 
  
 import os
 
@@ -37,7 +66,7 @@ for type, file_list in files_classification.items():
 
 with open('all_files.txt', 'w') as fhand:
     fhand.write(content)
-./src/components/scratch.py 
+./src/python_scripts/scratch.py 
  
 nums = [0,0,1,1,1,2,2,3,3,4]
 
@@ -60,7 +89,17 @@ while i < nums_len:
 
 print(nums)
 
-print(len(nums))./src/App.jsx 
+print(len(nums))./src/python_scripts/task1.py 
+ 
+def hanoi(n):
+    if n == 1: 
+        return 1
+    
+    return 2 * hanoi(n - 1) + 1
+
+years = hanoi(64) / 60 / 60 / 24 / 365.25
+
+print(years)./src/App.jsx 
  
 import { useState } from 'react'
 import Head from './components/Head.jsx'
@@ -71,7 +110,8 @@ import Index from './components/Index.jsx'
 import About from './components/About.jsx'
 import Give from './components/Give.jsx'
 import Join from './components/Join.jsx'
-
+import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -84,7 +124,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
-        <Route path="/give" element={<Give />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/give" element={<Give />} />
         <Route path='join' element={<Join />} />
       </Routes>
@@ -106,12 +146,70 @@ function About() {
     )
 }
 
-export default About./src/components/Give.jsx 
+export default About./src/components/Contact.jsx 
+ 
+
+
+
+export default function Contact() {
+    return (
+        <>
+            <div className="container">
+                <h1>
+                    Contact Us
+                </h1>
+                <p>
+                    To contact our team, you can email our leadership at <a href="mailto:besherkitaz2004@gmail.com"> this address </a>
+                </p>
+            </div>
+        </>
+    )
+}./src/components/Footer.jsx 
+ 
+import '../css/footer.css'
+import Sponsors from './Sponsors';
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+
+
+export default function Footer() {
+    return (
+        <footer>
+            <div className="container">
+                <div className='left'>
+                    <div> 2022 RatFight Robotics Team. All rights reserved.</div>
+                    <div className='email-address'>
+                         <FontAwesomeIcon icon={faEnvelope}/> 
+                         <a href='mailto:davidbrothers0045@gmail.com'> davidbrothers0045@gmail.com </a>
+                    </div>
+                    <div className='email-address'>
+                        <FontAwesomeIcon icon={faLocationDot} />
+                        <a> 101 Chestnut Street, Berea, Ky 40404, New CMIT Building </a>
+                    </div>
+                    <Sponsors />
+                </div>
+
+                <div className="right">
+                    <a href="https://www.facebook.com/RatFightOfficial"><FontAwesomeIcon icon={faFacebook} style={{color: "white",}} /></a>
+                    <a href="https://www.instagram.com/ratfightofficial/"><FontAwesomeIcon icon={faInstagram} style={{color: "white",}}/></a>
+                    <a href="https://www.twitter.com/RatFightClub/"><FontAwesomeIcon icon={faTwitter} style={{color: "white",}}/></a>
+                </div> 
+            </div>
+        </footer>
+    )
+}./src/components/Give.jsx 
  
 import '../css/index.css'
 import '../css/App.css'
 import '../css/give.css'
 import donation1 from '../assets/donate1.png'
+
+
+import Footer from '../components/Footer.jsx'
+
 
 const PLACEHOLDER_TEXT = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
@@ -150,9 +248,9 @@ export default function Give() {
                                 <span>Submit to make impact!</span>
                             </li>
                         </ul>
-
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
@@ -178,19 +276,20 @@ export default function Head() {
                         <Link to='/' id='logo'>
                             <img src={RatFight2023logo} alt="Rat Boxer Logo - Image not found" height="65" />
                         </Link>
-                        <span className='icon'>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                        {/* The responsiveness point is at 545. After that, the below should be made into a list */}
-                        <span className="sections">
-                            <span><Link to="/give">Give</Link></span>
-                            <span><Link to="/join">Join us</Link></span>
-                            <span><Link to="/Contact"> Contact</Link></span>
-                            <span><Link to="/about">Our Sponsors</Link></span>
-                            <span><Link to="/about">About</Link></span>
-                        </span>
+                        <div className='links'>
+                            <span className='icon'>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            {/* The responsiveness point is at 545. After that, the below should be made into a list */}
+                            <span className="sections">
+                                <span><Link to="/give">Give</Link></span>
+                                <span><Link to="/join">Join us</Link></span>
+                                <span><Link to="/about">Our Sponsors</Link></span>
+                                <span><Link to="/about">About</Link></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,6 +306,8 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
 
 import Team from "./Team"
+import Footer from '../components/Footer.jsx'
+
 import '../css/App.css'
 
 
@@ -233,6 +334,8 @@ function Index() {
             </div>
 
             <Team/>
+            <Footer/>
+
         </>
     )
 }
@@ -243,7 +346,7 @@ export default Index
 ./src/components/Join.jsx 
  
 import '../css/join.css'
-
+import Footer from '../components/Footer.jsx'
 
 let PLACEHOLDER_TEXT = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
@@ -252,6 +355,10 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
 
 const Join = () => {
+
+    function redirect() {
+        window.location.href = "https://forms.google.com"
+    }
     return (
         <div className='join'>
             <div className='container'>
@@ -259,14 +366,23 @@ const Join = () => {
                 <img src='src\assets\join1.jpg'/> 
             </div>
 
-            <div>
-                <div className='left'>
-                    <div className='container'>                    
-                        <h2>Why Join Us?</h2>
-                        <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+            <div className='instructions'>
+                 <div className='container'>                    
+                    <h2>Why Join Us?</h2>
+                    <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                    <h2>Join as a student</h2>
+                    <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                    <div>
+                        <button className='join-button' onClick={redirect}>Join Now!</button>
+                    </div>
+                    <h2>Join as a mentor</h2>
+                    <p>{PLACEHOLDER_TEXT} {PLACEHOLDER_TEXT}</p>
+                    <div>
+                        <button className='join-button' onClick={redirect}>Join Now!</button>
                     </div>
                 </div>
             </div>  
+            <Footer/>
         </div>
     )
 }
@@ -275,37 +391,44 @@ export default Join;
 
  ./src/components/Member.jsx 
  
-import '../css/team.css'
+import '../css/team.css';
+import image from '../assets/RatFight2023logo.png';
+import { useEffect } from 'react';
 
-import image from '../assets/RatFight2023logo.png'
-export default function Member(props) {
+export default function Member({ name, description, details, isSliding }) {
+    useEffect(() => {
+        // This effect can be used if you want to do something on slide
+    }, [isSliding]);
 
     return (
-        <>
-        <div className="member">
+        <div className={`member ${isSliding ? 'slide' : ''}`}>
             <div className="head">
                 <div className="image">
-                    <img src={image} alt={props.name} />
+                    <img src={image} alt={name} />
                 </div>
                 <div className="info">
-                    <h1 class="name">
-                        {props.name}
-                    </h1>
-                    <h3 className="desc">
-                        {props.description}
-                    </h3>
+                    <h1 className="name">{name}</h1>
+                    <h3 className="desc">{description}</h3>
                 </div>
             </div>
-            <p className='details'>
-
-            </p>
+            <p className='details'>{details}</p>
         </div>
-    </>
+    );
+}./src/components/Sponsors.jsx 
+ 
+
+
+export default function Sponsors() {
+    return(
+        <>
+        </>
     )
 }./src/components/Team.jsx 
  
 import '../css/team.css';
-import { useState } from 'react';
+import '../css/App.css';
+import { useState, useEffect } from 'react';
+
 const disc_placeholder = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
@@ -314,24 +437,29 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 
 import Member from './Member'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 const Team = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isSliding, setIsSliding] = useState(false);
 
+
+
+      
     const nextMember = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
-        console.log(currentIndex)
+        setCurrentIndex((prevIndex) => ( prevIndex + 1) % teamMembers.length);
     };
 
     const prevMember = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + teamMembers.length) % teamMembers.length);
-        console.log(currentIndex)
     };
 
     const teamMembers = [
-        { name: 'Dr. Scott Heggen', description: 'Team Administrator' },
-        { name: 'David Brothers', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-        { name: 'Besher Kitaz', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }
+        { name: 'Dr. Scott Heggen', description: 'Team Administrator', details: "Dr. Scott Heggen, the adminstrator of the team, oversees the overall operations of the team, participation in world contests, and sets the team's main operation goals. Dr. Heggen focused his dissertation on participatory sensing, which brings together citizen data collectors to large-scale scientific projects through the use of mobile phones as sensors. Dr. Heggen engaged middle school students with science and mobile application development through his Mobile Application Development for Science program." },
+        { name: 'David Brothers', description: 'Team Lead.', details: "The head coach of an FRC robotics team. He is responsible for organizing and managing the team, providing technical guidance, and mentoring students in STEM skills. He oversees the robot's design and construction, develop competition strategies, and prepare the team for all aspects of the competition. He also handles fundraising, community outreach, and administrative duties, ensuring compliance with safety protocols and FRC regulations. He fosters a positive, inclusive team environment, promote continuous improvement, and engage with sponsors and the community to support the team's success." },
+        { name: 'Besher Kitaz', description: 'Web Developer and Software Mentor', details: 'Besher oversees our web system design and manages ensures that it is properly functioning. Besher is also part of the software team, where you assists in designing and materials for the class, along with helping setting up the materials and software and helps the students during the educational process.'},
     ];
 
     return (
@@ -339,12 +467,14 @@ const Team = () => {
         <div className="team">
             <div className='container'>
                 <h1> Our Team </h1>
-                <Member name={teamMembers[currentIndex].name}  
-                        description={teamMembers[currentIndex].description}
+                <Member 
+                    name={teamMembers[currentIndex].name}  
+                    description={teamMembers[currentIndex].description}
+                    details={teamMembers[currentIndex].details}
                 />
                 <div className='navButtons'>
-                    <button className="prev-button" onClick={prevMember} > &lt; </button>
-                    <button className="next-button" onClick={nextMember} > &gt; </button>
+                    <button className="nav-button" onClick={prevMember} > <FontAwesomeIcon icon={faArrowLeft} className='icon'/>  </button>
+                    <button className="nav-button" onClick={nextMember} > <FontAwesomeIcon icon={faArrowRight} className='icon'/> </button>
                 </div>
             </div>
         </div>
@@ -369,7 +499,7 @@ createRoot(document.getElementById('root')).render(
  
 :root {
     --main-color: white;
-    --secondary-color: blue;
+    --secondary-color:  rgb(80, 80, 191);
     --secondary-text-color: #514d4d;
 }
 
@@ -472,7 +602,7 @@ a[href^="/"]:hover::after {
 
 /* Set hover color to prevent default blue color */
 a[href^="/"]:hover {
-    color: var(--secondary-color); /* Keep the same color on hover */
+    color: var(--secondary-text-color); /* Keep the same color on hover */
 }
 
 
@@ -543,6 +673,10 @@ border: 1px solid rgba(255, 255, 255, 0.11);
     transform: translateY(-20px);
 }
 
+.goals .container h1 {
+    color: var(--secondary-color);
+}
+
 .team {
     background-color: var(--main-color);
     color: var(--secondary-color);
@@ -554,7 +688,59 @@ border: 1px solid rgba(255, 255, 255, 0.11);
 }
 
 
-./src/css/give.css 
+./src/css/footer.css 
+ 
+footer {
+    background-color: var(--secondary-color);
+}
+
+footer .container {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+footer .container a {
+    color: white;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+
+footer .container .right a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer .container .left  {
+    display: flex;
+    flex-direction: column;
+}
+
+
+footer .container .left * {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer .container .left  .email-address {
+    display: flex;
+    flex-direction: row;
+}
+
+footer .container .right {
+    font-size: 50px;
+}
+
+footer .container .right *{
+    margin: 10px;
+}./src/css/give.css 
  
 .give {
     background-color: var(--main-color);
@@ -597,16 +783,25 @@ border: 1px solid rgba(255, 255, 255, 0.11);
     margin-top: 30px;
 }./src/css/Head.css 
  
+.parent  {
+  background-color: var(--secondary-color);
+}
+
+.parent .navBar .container{
+  background-color: var(--secondary-color);
+}
+
 /* Navigation */
-.sections span {
-    color: var(--secondary-text-color);
+@media (min-width: 680px) {
+  .sections span a{
+    color: #ddd;
     margin-left: 20px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 
-.navBar .container {
+.navBar .container { 
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -619,77 +814,86 @@ border: 1px solid rgba(255, 255, 255, 0.11);
     transform: scaleX(0);
 }
 
+}
+
 
 /* Navigation End */
 
-/* Navigation Icon for small screens */
+@media (max-width: 680px) {
+  
+  .navBar .container { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 
-.navBar .container:hover .icon span:nth-child(2) {
+  .navBar .container .sections span {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+  }
+
+  .navBar .container .sections span:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+  .navBar .container .sections {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 999;
+      right: 50px;
+      top: 60px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+
+
+ 
+  /* Navigation Icon - DONT CHANGE */
+  .navBar .container:hover .icon span:nth-child(2) {
     width: 100%;
   }
-.navBar .container .icon {
-    display: none;
-  }
+
+
 .navBar .container .icon span {
     background-color: #333;
     margin-bottom: 5px;
     height: 2px;
   }
-.navBar .container .icon span:first-child {
-  width: 100%;
-}
-.navBar .container .icon span:nth-child(2) {
-  width: 60%;
-  transition: 0.5s;
-}
-.navBar .container .icon span:last-child {
-  width: 100%;
+
+  .navBar .container .icon span:first-child {
+    width: 100%;
+  }
+
+  .navBar .container .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.5s;
+  }
+  
+  .navBar .container .icon span:last-child {
+    width: 100%;
+  }
+
+  .navBar .container .icon {
+    display: inline;
+  }
+  .navBar .container  .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+    /* Navigation Icon end */
+
 }
 
-
-@media (max-width: 680px) {
-  .header .links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: #f6f6f6;
-    position: absolute;
-    right: 0;
-    min-width: 200px;
-    top: calc(100% + 15px);
-    display: none;
-    z-index: 1;
-  }
-  .header .links ul::before {
-    content: "";
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent #f6f6f6 transparent;
-    position: absolute;
-    right: 5px;
-    top: -20px;
-  }
-  .header .links:hover ul {
-    display: block;
-  }
-  .header .links ul li a {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: #333;
-    transition: var(--main-duration);
-  }
-  .header .links ul li a:hover {
-    padding-left: 25px;
-  }
-}./src/css/index.css 
+./src/css/index.css 
  
-:root {
-  --main-color: white;
-  --secondary-color: blue;
-  --secondary-text-color: #3b3737;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -697,7 +901,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: white;
+  background-color:  rgb(192, 26, 26);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -716,8 +920,9 @@ button:focus-visible {
     background-color: white;
   }
   button {
-    background-color: white;
+    background-color: #3b3737;
   }
+
 }
 ./src/css/join.css 
  
@@ -739,7 +944,18 @@ button:focus-visible {
 
 }
 
-./src/css/team.css 
+.join-button {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bolder;
+}
+
+.join .instructions .container {
+    display: flex;
+    align-items: start;
+}./src/css/team.css 
  
 .team {
     color: var(--secondary-text-color);
@@ -750,16 +966,29 @@ button:focus-visible {
 .team .container {
     background-color: #f7f7f7;
     max-width: 100vw;
-
 }
+
+.team .container>h1 {
+    color: var(--secondary-color);
+}
+
+.icon {
+    color: white; /* Change to your desired color */
+  }
+
 .member {
     border: none;
     border-radius: 15px;
     width: 100%;
     margin: 20px;
     padding: 20px;
-    max-width: 100vw;
 }
+
+.member p { 
+    max-height: 5vh;
+    min-height: 5vh;
+}
+
 
 .head {
     display: flex;
@@ -773,8 +1002,6 @@ button:focus-visible {
     height: auto;
     margin-right: 50px;
 }
-
-
 
 .details {
     margin-top: 20px;
@@ -790,20 +1017,18 @@ button:focus-visible {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 15%;
+    width: 18%;
 }
 
 .nav-button:hover {
     background-color: var(--primary-hover-color);
 }
 
-.prev-button {
+.nav-button {
     border-radius: 50%;
+    background-color: var(--secondary-color);
 }
 
-.next-button {
-    border-radius: 50%;
-} 
 
 
 @media (max-width: 429px) {

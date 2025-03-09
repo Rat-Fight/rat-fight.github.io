@@ -1,0 +1,47 @@
+.header {
+    color: var(--secondary-color);
+    padding: 1em 0;
+    text-align: center;
+}
+
+.sponsor-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.sponsor-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.sponsor-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+.sponsor-card h3 {
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+.sponsor-card p {
+    padding: 0 15px 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+.footer {
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
