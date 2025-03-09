@@ -1,2 +1,2 @@
-# RFC
-Website for RFC team
+# RoboticsTeam
+A website for the RFT Robotics Team
