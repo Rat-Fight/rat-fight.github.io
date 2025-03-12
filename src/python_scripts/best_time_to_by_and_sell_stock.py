@@ -1,18 +1,14 @@
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
 
-        min_price = prices[0]
-        max_price = prices[0]
+def first_non_repeating_character(s):
+    # Write your code here
+    print(s)
+    chars = set()
+    for i, c in enumerate(s):
+        if not c in chars:
+            chars.add(c)
+        else:
+            return i
 
-        for i in prices:
-            if i < min_price:
-                min_price = i
-
-            if i > max_price:
-                max_price = i
-
-        return max_price - (min_price if max_price - min_price >= 0 else 0)
+        
+s = "loveleetcode"
+print(first_non_repeating_character(s))

@@ -1,50 +1,51 @@
-
-
 import React from 'react';
 import '../css/sponsors.css';
 import Footer from './Footer';
+
+// Logos here
 import BereaLogo from '../assets/bereaCollegeLogoWhiteText.jpg'
+import YaleLogo from '../assets/SponsorsLogos/HYSTER-YALE.png'
+import Noviles from '../assets/SponsorsLogos/novelis.png'
+import AndyMark from '../assets/SponsorsLogos/AndyMark.png'
 const sponsors = [
     {
         id: 1,
-        name: 'Berea college',
-        description: 'A short description of Sponsor 1 and their contribution or role.',
+        name: 'Berea College Computer Science Department',
         logo: BereaLogo,
     },
     {
         id: 2,
         name: 'Novelis',
-        description: 'A short description of Sponsor 2 and their contribution or role.',
-        logo: 'sponsor2-logo.png',
+        logo: Noviles,
     },
     {
         id: 3,
-        name: 'Andymark',
-        description: 'A short description of Sponsor 3 and their contribution or role.',
-        logo: 'sponsor3-logo.png',
-    },
+        name: 'Hyster',
+        logo: YaleLogo,
+        },
     {
         id: 4,
-        name: 'FIRST robotics',
-        description: 'A short description of Sponsor 3 and their contribution or role.',
-        logo: 'sponsor4-logo.png',
+        name: 'Andymark',
+        logo: AndyMark,
     },
     {
         id: 5,
+        name: 'FIRST robotics',
+        logo: 'sponsor4-logo.png',
+    },
+    {
+        id: 6,
         name: 'Kentucky FIRST',
-        description: 'A short description of Sponsor 3 and their contribution or role.',
         logo: 'sponsor5-logo.png',
     },
     {
-        id: 6,
+        id: 7,
         name: 'Icon automation',
-        description: 'A short description of Sponsor 3 and their contribution or role.',
         logo: 'sponsor6-logo.png',
     },
     {
-        id: 6,
+        id: 8,
         name: 'Parker Hannifin',
-        description: 'A short description of Sponsor 3 and their contribution or role.',
         logo: 'sponsor6-logo.png',
     },
 ];
@@ -61,9 +62,10 @@ const Sponsors = () => {
                 <section className="sponsor-section">
                     {sponsors.map((sponsor) => (
                         <div key={sponsor.id} className="sponsor-card">
-                            <img src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+                            <div className="image-container">
+                                <img src={sponsor.logo} alt={`${sponsor.name} Logo`} />
+                            </div>
                             <h3>{sponsor.name}</h3>
-                            <p>{sponsor.description}</p>
                         </div>
                     ))}
                 </section>
@@ -78,3 +80,4 @@ const Sponsors = () => {
 
 
 export default Sponsors;
+
