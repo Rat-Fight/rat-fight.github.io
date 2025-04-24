@@ -7,66 +7,59 @@ import BereaLogo from '../assets/bereaCollegeLogoWhiteText.jpg'
 import YaleLogo from '../assets/SponsorsLogos/HYSTER-YALE.png'
 import Noviles from '../assets/SponsorsLogos/novelis.png'
 import AndyMark from '../assets/SponsorsLogos/AndyMark.png'
+import { Link } from 'react-router-dom';
 const sponsors = [
     {
         id: 1,
         name: 'Berea College Computer Science Department',
         logo: BereaLogo,
+        website: 'https://www.berea.edu/academics/departments-programs/computer-science',
     },
     {
         id: 2,
         name: 'Novelis',
         logo: Noviles,
+        website: 'https://www.novelis.com//',
     },
     {
         id: 3,
         name: 'Hyster',
         logo: YaleLogo,
+        website: 'https:/www.hyster.com/en-us/north-america/',
         },
     {
         id: 4,
         name: 'Andymark',
         logo: AndyMark,
-    },
-    {
-        id: 5,
-        name: 'FIRST robotics',
-        logo: 'sponsor4-logo.png',
-    },
-    {
-        id: 6,
-        name: 'Kentucky FIRST',
-        logo: 'sponsor5-logo.png',
-    },
-    {
-        id: 7,
-        name: 'Icon automation',
-        logo: 'sponsor6-logo.png',
-    },
-    {
-        id: 8,
-        name: 'Parker Hannifin',
-        logo: 'sponsor6-logo.png',
+        website: 'https://www.andymark.com/',
     },
 ];
 
 const Sponsors = () => {
     return (
-        <div>
+        <div >
             <header className="header">
-                <h1>Our Sponsors</h1>
-                <p>We are grateful for the support of our sponsors who make everything possible.</p>
+                <div className='container'>
+                    <h1 className='blue-header-text-white'>Our Sponsors</h1>
+                </div>
+                <h2>We are grateful for the support of our sponsors who make everything possible.</h2>
             </header>
 
             <div className="container">
                 <section className="sponsor-section">
-                    {sponsors.map((sponsor) => (
-                        <div key={sponsor.id} className="sponsor-card">
+                {sponsors.map((sponsor) => (
+                        <a 
+                            key={sponsor.id} 
+                            href={sponsor.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="sponsor-card"
+                        >
                             <div className="image-container">
                                 <img src={sponsor.logo} alt={`${sponsor.name} Logo`} />
                             </div>
                             <h3>{sponsor.name}</h3>
-                        </div>
+                        </a>
                     ))}
                 </section>
             </div>
@@ -80,4 +73,5 @@ const Sponsors = () => {
 
 
 export default Sponsors;
+
 

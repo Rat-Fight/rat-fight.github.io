@@ -9,10 +9,16 @@
     align-items: baseline;
 }
 
-.acheivements .container .right * {
+.acheivements .container .right {
     align-items: end;
 }
 
+.acheivements .container .both {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid darkblue;
+    border-radius: 20px;
+}
 .acheivements .container .left:hover * {
     transform: translate(10px);
 }
@@ -20,3 +26,4 @@
 .acheivements .container .right:hover * {
     transform: translate(-10px);
 }
+

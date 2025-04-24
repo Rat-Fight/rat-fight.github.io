@@ -5,10 +5,6 @@
     font-size: large;
 }
 
-.give .container h1{
-    color: var();
-}
-
 .instructions {
     margin-top: 20px;
 }
@@ -17,6 +13,8 @@
     display: flex;
     align-items: start;
 }
+
+
 
 .instructions {
     background-color: var(--main-color);

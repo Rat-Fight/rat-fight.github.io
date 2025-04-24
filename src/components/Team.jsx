@@ -32,7 +32,7 @@ const Team = () => {
 
         <div className="team">
             <div className='container'>
-                <h1> Our Team </h1>
+                <h1 className='blue-header-text-white'> Our Team </h1>
                 <Member 
                     name={teamMembers[currentIndex].name}  
                     description={teamMembers[currentIndex].description}

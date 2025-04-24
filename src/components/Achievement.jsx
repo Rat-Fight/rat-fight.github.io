@@ -32,19 +32,19 @@ export default function Acheivement() {
 
         <div className="acheivement">
             <div className="container">
-                {acheivements.map((acheivement) => (
-                <div className={(acheivement.id%2 == 0) ? "left" : "right"}>
-                    <hr style={{ border: "1px solid grey", width: "90vw" }} />
-                    <h3>
-                        {acheivement.header}
-                    </h3>
-                    <p>
-                        {acheivement.text}
-                    </p>
+                    {acheivements.map((acheivement) => (
+                        <div className='both'>
+                            <div className={(acheivement.id%2 == 0) ? "left" : "right"}>
+                                <h3>
+                                    {acheivement.header}
+                                </h3>
+                                <p>
+                                    {acheivement.text}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                ))}
             </div>
-        </div>  
-
     )
 }

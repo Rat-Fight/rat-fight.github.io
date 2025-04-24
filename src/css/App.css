@@ -141,12 +141,12 @@ a[href^="/"]:hover {
     min-width: 300px;
 
 /* From https://css.glass */
-background: rgba(255, 255, 255, 0.26);
+background: white;
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(6.3px);
 -webkit-backdrop-filter: blur(6.3px);
-border: 1px solid rgba(255, 255, 255, 0.11);
+border: 5px solid darkblue;
 }
 
 /* Below Landing Rules */
@@ -159,6 +159,9 @@ border: 1px solid rgba(255, 255, 255, 0.11);
     
 }
 
+.goals .container h1 {
+
+}
 @media (max-width: 600px) {
     .goals .cards {
         grid-template-columns: repeat(1 , minmax(200px, 2fr));
@@ -182,7 +185,7 @@ border: 1px solid rgba(255, 255, 255, 0.11);
     transform: translateY(-20px);
 }
 
-.goals .container h1 {
+.goals .container .boxes {
     color: var(--secondary-color);
 }
 
@@ -197,3 +200,24 @@ border: 1px solid rgba(255, 255, 255, 0.11);
 }
 
 
+/* Generic */
+.blue-header-text-white {
+    background-color: var( --secondary-color);
+    color: aliceblue;
+    font-size: 36px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.boxed-element-hover-effect {
+    border: solid 3px var(--secondary-color);
+    border-radius: 20px;
+    padding: 20px;
+    
+}
+
+.boxed-element-hover-effect:hover {
+    background-color: #e5e7eb;
+}

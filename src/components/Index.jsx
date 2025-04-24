@@ -59,16 +59,16 @@ function Index() {
 
             <div className="landing">
                 <div className='landing-text'>
-                    <h1>Welcome to Rat Fight Robotics Team</h1>
+                    <h1 >Welcome to Rat Fight Robotics Team</h1>
                 </div>
             </div>
             <div className="goals">
                 <div className="container">
-                    <h1>What We Do</h1>
+                    <h1 className="blue-header-text-white">What We Do</h1>
                     <div className="cards">
                         {WhatWeDo.map((element) => 
                         <div> 
-                            <h1>
+                            <h1 className="boxes">
                                 <center> {element.header} </center>
                             </h1>
                             <div>

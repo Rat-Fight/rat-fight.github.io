@@ -7,7 +7,7 @@ import donation1 from '../assets/donate1.png'
 import Footer from '../components/Footer.jsx'
 
 
-const PLACEHOLDER_TEXT = `
+const introText = `
 We are dedicated to making a difference, but we can't do it alone. Your support helps us expand our reach, improve our programs, and create a lasting impact. Whether it's through volunteering, donations, or spreading the word, every effort counts in making our mission a success.
 
 By joining us, you're not just contributing to a cause—you’re becoming part of a community committed to positive change. Help us grow and make a difference today!`
@@ -17,13 +17,13 @@ export default function Give() {
     return(
         <div className='give'>
             <div className='container'>
-                <h1>Help us Grow!</h1>
-                <p>
-                    {PLACEHOLDER_TEXT}
+                <h1 className='blue-header-text-white'>Help us Grow!</h1>
+                <p className='boxed-element-hover-effect'>
+                    {introText}
                 </p>
             </div>
             <div className='instructions'>
-                <div className='container'>
+                <div className='container boxed-element-hover-effect'>
                         <h2>How to help us?</h2>
                         <ul>                      
                             <li>
