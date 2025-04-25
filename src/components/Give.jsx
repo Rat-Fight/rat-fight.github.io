@@ -25,12 +25,12 @@ export default function Give() {
             <div className='instructions'>
                 <div className='container boxed-element-hover-effect'>
                         <h2>How to help us?</h2>
-                        <ul>                      
+                        <ol>                      
                             <li>
                             <span>To donate to Rat Fight Robotics Team, visit <a target='_blank' href='https://give.berea.edu/page/64519/donate/1?locale=en-US'> Berea Donation Page.</a></span>
                             </li>
                             <li>
-                                <span>Select Gift amount and frequesncy. For Gift designation, please select 'other' and then type 'Rat Fight Robotics Team' in the space below.</span>
+                                <span>Select Gift amount and frequency. For Gift designation, please select 'other' and then type 'Rat Fight Robotics Team' in the space below.</span>
                                 <img src={donation1} width='500px'/>
                             </li>
                             <li>
@@ -42,7 +42,7 @@ export default function Give() {
                             <li>
                                 <span>Submit to make impact!</span>
                             </li>
-                        </ul>
+                        </ol>
                 </div>
             </div>
             <Footer />
