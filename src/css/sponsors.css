@@ -9,7 +9,11 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    border: solid 2px;
+    border-radius: 30px;
+    padding: 100px;
 }
+
 .sponsor-card {
     background-color: white;
     border: 1px solid #ddd;
@@ -21,18 +25,22 @@
     min-height: 60vh;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .sponsor-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .sponsor-card img {
     width: 100%;
     height: auto;
 }
+
 .sponsor-card h3 {
     margin: 15px 0;
     font-size: 1.2em;
 }
+
 .sponsor-card p {
     padding: 0 15px 15px;
     font-size: 0.9em;

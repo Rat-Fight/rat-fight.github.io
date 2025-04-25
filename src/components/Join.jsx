@@ -39,19 +39,21 @@ const Join = () => {
     return (
         <div className='join'>
             <div className='container'>
-                <h1>Join Our Team!</h1> 
+                <h1 className='blue-header-text-white '>Join Our Team!</h1> 
                 <img src='src\assets\join1.jpg'/> 
             </div>
 
             <div className='instructions'>
                  <div className='container'>  
-                    {/* Join section - general */}                  
-                    <h2>Why Join Us?</h2>
-                    <p>{join}</p>
-
+                    {/* Join section - general */}      
+                    <div className='boxed-element-hover-effect '>            
+                        <h2>Why Join Us?</h2>
+                        <p>{join}</p>
+                    </div>
                     {/* Join as a studnet section */}
-                    <div>
-                    <h2>Join as a student</h2>
+
+                    <div className='boxed-element-hover-effect'>  
+                        <h2>Join as a student</h2>
                         <span>{join_student}</span>
                         <ul>
                             {join_student_bullets.map((bullet, index) => (
@@ -62,17 +64,20 @@ const Join = () => {
                             <button className='join-button' onClick={redirect}>Join Now!</button>
                         </div>
                     </div>
-
-                    <h2>Join as a mentor</h2>
-                    <p>{join_mentor}</p>
-                    <ul>
-                        {join_mentor_bullets.map((bullet, index) => (
-                            <li key={index}>{bullet}</li>
-                        ))}
-                    </ul>
-                    <div>
-                        <button className='join-button' onClick={redirect}>Join Now!</button>
+                    
+                    <div className='boxed-element-hover-effect'>
+                        <h2>Join as a mentor</h2>
+                        <p>{join_mentor}</p>
+                        <ul>
+                            {join_mentor_bullets.map((bullet, index) => (
+                                <li key={index}>{bullet}</li>
+                            ))}
+                        </ul>
+                        <div>
+                            <button className='join-button' onClick={redirect}>Join Now!</button>
+                        </div>
                     </div>
+
                 </div>
             </div>  
             <Footer/>
