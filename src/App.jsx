@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Head from './components/Head.jsx'
 import './css/App.css'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Index from './components/Index.jsx'
 import About from './components/About.jsx'
