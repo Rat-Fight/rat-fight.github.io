@@ -25,7 +25,7 @@ const sponsors = [
         id: 3,
         name: 'Hyster',
         logo: YaleLogo,
-        website: 'https:/www.hyster.com/en-us/north-america/',
+        website: 'https://www.hyster.com/en-us/north-america/',
         },
     {
         id: 4,
