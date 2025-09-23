@@ -52,7 +52,7 @@ import Footer from '../components/Footer.jsx'
 import '../css/App.css'
 
 
-function Index() {
+function    Index() {
 
     return (
         <>  

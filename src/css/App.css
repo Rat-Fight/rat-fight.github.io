@@ -159,9 +159,7 @@ border: 5px solid darkblue;
     
 }
 
-.goals .container h1 {
 
-}
 @media (max-width: 600px) {
     .goals .cards {
         grid-template-columns: repeat(1 , minmax(200px, 2fr));
@@ -209,6 +207,8 @@ border: 5px solid darkblue;
     border-radius: 15px;
     padding-left: 40px;
     padding-right: 40px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .boxed-element-hover-effect {
