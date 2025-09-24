@@ -15,16 +15,18 @@ export default function Footer() {
                     <div> 2022 RatFight Robotics Team. All rights reserved.</div>
                     <div className='email-address'>
                          <FontAwesomeIcon icon={faEnvelope}/> 
-                         <a href='mailto:davidbrothers0045@gmail.com'> davidbrothers0045@gmail.com </a>
+                         <a href='mailto:9152ratfight@gmail.com'> 9152ratfight@gmail.com </a>
                     </div>
                     <div className='email-address'>
                         <FontAwesomeIcon icon={faLocationDot} />
                         <a> 101 Chestnut Street, Berea, Ky 40404, New CMIT Building </a>
                     </div>
-                    <div className='email-address'>
+
+{/* The code below in case we need to add a phone number later */}
+{/*                     <div className='email-address'>
                         <FontAwesomeIcon icon={faPhone} />
-                        <a> 859 (756) - 2555 </a>
-                    </div>
+                        <a> 123 (456) - 7890 </a>
+                    </div> */}
                 </div>
                 <div className="right">
                     <a href="https://www.facebook.com/RatFightOfficial" target='_blank' ><FontAwesomeIcon icon={faFacebook} style={{color: "white",}} /></a>

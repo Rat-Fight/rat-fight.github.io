@@ -7,8 +7,6 @@ import Index from './components/Index.jsx'
 import About from './components/About.jsx'
 import Give from './components/Give.jsx'
 import Join from './components/Join.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
 import Sponsors from './components/Sponsors.jsx'
 
 function App() {
@@ -23,10 +21,8 @@ function App() {
         <Route exact path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/sponsors" element={<Sponsors />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/give" element={<Give />} />
         <Route path='join' element={<Join />} />
-        <Route path='footer' element={<Footer />} /> {/* For Testing purposes */}
       </Routes>
     </Router>
 
@@ -35,3 +31,4 @@ function App() {
 }
 
 export default App
+

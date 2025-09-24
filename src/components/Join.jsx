@@ -1,4 +1,5 @@
 import '../css/join.css'
+import joinimg from '../assets/join1.jpg'
 import Footer from '../components/Footer.jsx'
 
 let join = `
@@ -25,7 +26,7 @@ You'll have the chance to:
 `
 
 let join_mentor_bullets = [
-    'Guide students on their robotics journey',
+    'Guide students on their robotics journey', 
     'Support and mentor students in STEM fields',
     'Lead and manage the team\'s projects and competitions',
     'Provide technical guidance and support',
@@ -33,14 +34,18 @@ let join_mentor_bullets = [
 
 const Join = () => {
 
-    function redirect() {
-        window.location.href = "https://forms.google.com"
+    function redirectStudent() {
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSfcEDvfr_A-MiKtDTJwtBJArtbDlyWagWKl6yHTQYPWzNP-4w/viewform?usp=sf_link")
+    }
+
+    function redirectMentor() {
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSccB9N4mXC6Rz1RUyeY3qRJ2EAEiRc1xhHCF2vYXxe5_e3WpA/viewform?usp=sf_link")
     }
     return (
         <div className='join'>
             <div className='container'>
                 <h1 className='blue-header-text-white '>Join Our Team!</h1> 
-                <img src='src\assets\join1.jpg'/> 
+                <img src={joinimg}/> 
             </div>
 
             <div className='instructions'>
@@ -61,7 +66,7 @@ const Join = () => {
                             ))}
                         </ul>   
                         <div>
-                            <button className='join-button' onClick={redirect}>Join Now!</button>
+                            <button className='join-button' onClick={redirectStudent}>Join Now!</button>
                         </div>
                     </div>
                     
@@ -74,7 +79,7 @@ const Join = () => {
                             ))}
                         </ul>
                         <div>
-                            <button className='join-button' onClick={redirect}>Join Now!</button>
+                            <button className='join-button' onClick={redirectMentor}>Join Now!</button>
                         </div>
                     </div>
 
