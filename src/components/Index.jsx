@@ -88,7 +88,3 @@ function    Index() {
 
 
 export default Index
-
-/*                         <div> {WhatWeDo[1]} </div>
-                        <div> {WhatWeDo[2]} </div>
-                        <div> {WhatWeDo[3]} </div> */
