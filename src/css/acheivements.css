@@ -1,29 +1,38 @@
-.acheivements .container div *{
+.achievements .container div * {
     display: flex;
     flex-direction: column;
     max-width: 88%;
     transition: translate 0.5s ease, transform 0.3s ease-out;
 }
 
-.acheivements .container .left {
-    align-items: baseline;
-}
+.achievements .container>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
 
-.acheivements .container .right {
-    align-items: end;
-}
-
-.acheivements .container .both {
+.achievements .container .achievement-box {
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid darkblue;
     border-radius: 20px;
+    width: 100%;
 }
-.acheivements .container .left:hover * {
+.achievements .container .left {
+    align-items: baseline;
+}
+
+.achievements .container .right {
+    align-items: end;
+}
+
+
+.achievements .container .left:hover * {
     transform: translate(10px);
 }
 
-.acheivements .container .right:hover * {
+.achievements .container .right:hover * {
     transform: translate(-10px);
 }
 
