@@ -46,13 +46,13 @@ const WhatWeDo = [
 ]
 
 import Team from "./Team"
-import Acheivements from "./Achievements.jsx"
+import Achievements from "./Achievements.jsx"
 import Footer from '../components/Footer.jsx'
 
 import '../css/App.css'
 
 
-function    Index() {
+function Index() {
 
     return (
         <>  
@@ -80,7 +80,7 @@ function    Index() {
                 </div>
             </div>
             <Team/>
-            <Acheivements/>
+            <Achievements/>
             <Footer/>
         </>
     )
