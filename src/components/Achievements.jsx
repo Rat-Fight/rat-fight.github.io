@@ -4,15 +4,15 @@ import '../css/acheivements.css';
 export default function Achievements() {
 
         const achievements = [
-        {   
-            id: 1,
-            header: "Secured Significant Grants",
-            text: `Successfully obtained a $5,000 grant from Ball and Novelis, which supported the creation of an innovative can-crushing robot, CanBot.`
-        },
         {
+            id: 1,
+            header: "Rookie All-Star Award",
+            text: `Recognized as one of the top emerging teams in the region for exceptional performance, leadership, and community impact, earning automatic qualification to the FRC World Championships.`
+        },
+        {   
             id: 2,
-            header: "Community Engagement",
-            text: `Conducted outreach activities and generated interest in robotics during events like Mountain Day, attracting potential new members to the team.`
+            header: "Labor Opportunities and Growth on Berea Campus",
+            text: `To be updated`
         },
         {
             id: 3,

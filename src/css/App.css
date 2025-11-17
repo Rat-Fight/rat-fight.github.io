@@ -221,3 +221,8 @@ border: 5px solid darkblue;
 .boxed-element-hover-effect:hover {
     background-color: #e5e7eb;
 }
+
+.cards .box-bullet-point {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
