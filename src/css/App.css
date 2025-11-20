@@ -47,7 +47,6 @@ body {
     flex-direction: column;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: var(--main-color);
 
 }
 
@@ -140,13 +139,13 @@ a[href^="/"]:hover {
     text-align: center;
     min-width: 300px;
 
-/* From https://css.glass */
-background: white;
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6.3px);
--webkit-backdrop-filter: blur(6.3px);
-border: 5px solid darkblue;
+    /* From https://css.glass */
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 5px solid darkblue;
 }
 
 /* Below Landing Rules */
@@ -171,12 +170,18 @@ border: 5px solid darkblue;
 }
 
 .goals .cards > div {
-    border: solid var(--secondary-color);
     border-radius: 35px;
     padding: 20px;
     overflow: hidden; /* Hides any overflowing content */
     transition: transform 0.5s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.42);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
 }
 
 .goals .cards > div:hover {
