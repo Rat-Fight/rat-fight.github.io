@@ -15,9 +15,9 @@
 .achievements .container .achievement-box {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 2px solid darkblue;
     border-radius: 20px;
     width: 100%;
+    
 }
 .achievements .container .left {
     align-items: baseline;

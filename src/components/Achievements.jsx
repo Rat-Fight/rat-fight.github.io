@@ -41,6 +41,7 @@ export default function Achievements() {
                                     {achievement.text}
                                 </p>
                             </div>
+                            <div style={{ borderTop: "1px solid #000", width: "100%", margin: "10px 0" }}></div>
                         </div>
                     ))}
                 </div>
