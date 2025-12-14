@@ -79,6 +79,4 @@ To contribute:
 3. Make your changes  
 4. Open a pull request for review  
 
-Please follow any existing team or coding standards.
-
 ## License
